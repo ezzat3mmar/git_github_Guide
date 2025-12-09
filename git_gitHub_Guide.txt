@@ -1,0 +1,188 @@
+Git & GitHub Quick Guide
+========================
+
+(1) Configure Git (username & email)
+-----------------------------------
+
+- Set username for the current repository only:
+  git config user.name "Your Name"
+
+- Set username globally (all repositories):
+  git config --global user.name "Your Name"
+
+- Set email for the current repository only:
+  git config user.email "your_email@example.com"
+
+- Set email globally (all repositories):
+  git config --global user.email "your_email@example.com"
+
+- Show current configuration:
+  git config --list
+
+
+(2) Initialize and basic workflow
+--------------------------------
+
+- Initialize a new Git repository in the project folder:
+  git init
+
+- Add one file to the staging area:
+  git add filename.ext
+
+- Add all changed files to the staging area:
+  git add .
+
+- Commit changes with a message:
+  git commit -m "Write a clear commit message"
+
+- Show the current status of files (modified / staged / untracked):
+  git status
+
+- Show commit history (verbose):
+  git log -v
+
+- Show short commit history:
+  git log --oneline --graph --decorate
+
+- Show differences before committing:
+  git diff
+
+
+(3) Branches and HEAD
+--------------------
+
+- Create a new branch (without switching to it):
+  git branch feature-branch
+
+- Create a new branch and switch to it:
+  git checkout -b feature-branch
+
+- Switch to an existing branch (example: master or main):
+  git checkout master
+  or
+  git checkout main
+
+- Switch back to the previous branch:
+  git switch -
+
+- What is HEAD?
+  HEAD is the pointer to the commit you are currently on in the checked-out branch.
+  Example: "HEAD -> master" or "HEAD -> main" means you are on the latest commit of that branch.
+
+
+(4) Checkout an older commit (versions)
+--------------------------------------
+
+- Show commits with short IDs:
+  git log --oneline
+
+- Checkout a specific commit (detached HEAD state):
+  git checkout COMMIT_ID
+
+- Go back to the latest commit on the main branch:
+  git checkout master
+  or
+  git checkout main
+
+
+(5) Working with feature branches and merging
+--------------------------------------------
+
+- Create a new branch for experiments (so you do not touch master/main):
+  git checkout -b experiment
+
+- Make edits and commits on the experiment branch.
+
+- Go back to the main branch:
+  git checkout master
+  or
+  git checkout main
+
+- Merge the experiment branch into the main branch:
+  git merge experiment
+
+
+(6) Remote repositories (GitHub, etc.)
+-------------------------------------
+
+- Add a remote named "origin" (example from GitHub):
+  git remote add origin https://github.com/username/repo.git
+
+- Show configured remotes:
+  git remote -v
+
+- Fetch latest changes from remote (without merge):
+  git fetch origin
+
+- Pull latest changes and merge into current branch:
+  git pull
+  or
+  git pull origin branch-name
+
+- Push commits to remote for the first time and set upstream:
+  git push -u origin branch-name
+
+- Push commits next times (same branch):
+  git push
+
+
+(7) Useful Git aliases (shortcuts)
+---------------------------------
+
+To create an alias, use:
+git config --global alias.<shortcut> "<command>"
+
+Examples:
+
+- Alias for "git status":
+  git config --global alias.st "status"
+  Use:
+  git st
+
+- Alias for "git commit -m":
+  git config --global alias.cmm "commit -m"
+  Use:
+  git cmm "Your commit message"
+
+- Alias for "git checkout":
+  git config --global alias.co "checkout"
+  Use:
+  git co branch-name
+
+- Alias for "git branch":
+  git config --global alias.br "branch"
+  Use:
+  git br
+
+- Alias for a nice log view:
+  git config --global alias.lg "log --oneline --graph --decorate --all"
+  Use:
+  git lg
+
+
+(8) Mini GitHub guide (basic workflow)
+-------------------------------------
+
+ 1: Create a GitHub account at:
+   https://github.com
+
+ 2: Create a new repository from the "New" button:
+   - Choose repository name
+   - Choose Public or Private
+   - Optionally add a README
+
+ 3: Link the local project to the GitHub repository:
+   - In your project folder:
+     git init
+
+   - Add files and make the first commit:
+     git add .
+     git commit -m "Initial commit"
+
+   - Add the remote (replace username and repo):
+     git remote add origin https://github.com/username/repo.git
+
+   - Push the main branch (name can be main or master):
+     git push -u origin main
+     or
+     git push -u origin master
