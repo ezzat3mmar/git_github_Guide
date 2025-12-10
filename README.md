@@ -1,4 +1,4 @@
-# Git & GitHub Comprehensive Guide
+# Git & GitHub Guide
 
 This guide provides a detailed overview of the most common Git commands and GitHub workflow for version control and collaboration.
 
