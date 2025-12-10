@@ -125,42 +125,7 @@ Git & GitHub Quick Guide
 - Push commits next times (same branch):
   git push
 
-
-(7) Useful Git aliases (shortcuts)
----------------------------------
-
-To create an alias, use:
-git config --global alias.<shortcut> "<command>"
-
-Examples:
-
-- Alias for "git status":
-  git config --global alias.st "status"
-  Use:
-  git st
-
-- Alias for "git commit -m":
-  git config --global alias.cmm "commit -m"
-  Use:
-  git cmm "Your commit message"
-
-- Alias for "git checkout":
-  git config --global alias.co "checkout"
-  Use:
-  git co branch-name
-
-- Alias for "git branch":
-  git config --global alias.br "branch"
-  Use:
-  git br
-
-- Alias for a nice log view:
-  git config --global alias.lg "log --oneline --graph --decorate --all"
-  Use:
-  git lg
-
-
-(8) Mini GitHub guide (basic workflow)
+(7) Mini GitHub guide (basic workflow)
 -------------------------------------
 
  1: Create a GitHub account at:
